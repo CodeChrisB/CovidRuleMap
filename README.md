@@ -1,6 +1,6 @@
 # Our Europe Timeline
 
-OET is a cloud-enabled, mobile-ready, social timeline. Which tries to connect europe during the pandemic with a big timeline. Useres from arround Europe are allowed to contribute to the Timeline, after reviewing (1-2Days) content that's suitable will be published on the timeline
+OET is a cloud-enabled, mobile-ready, social timeline. Which tries to connect europe during the pandemic with a big timeline. People from arround Europe are allowed to contribute to the Timeline, after reviewing  (1-2Days) content that's suitable will be published on the timeline.
 
   - Submit your Content  [here](https://docs.google.com/forms/d/e/1FAIpQLSeMJyooHZTaZkpNwTEehxt06I7VVzwujhb6IZidH5KG8lyrpw/viewform)
   - Checkout the [livemap]()
