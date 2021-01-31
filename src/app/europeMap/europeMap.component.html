@@ -1,0 +1,9 @@
+<highcharts-chart
+  id="container"
+  constructorType='mapChart'
+  [Highcharts]="Highcharts"
+  [options]="chartOptions"
+  (click)="onPointSelect($event)"
+  [(update)]="updateFlag"
+  style="width: 100%; height: 100vh; display: block;">
+</highcharts-chart>
