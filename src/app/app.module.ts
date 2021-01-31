@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SriLankaMapComponent } from './europeMap/europeMap.component';
+import { EuropeMapComponent } from './europeMap/europeMap.component';
 import {HighchartsChartModule} from 'highcharts-angular';
 import { CountryComponent } from './country/country.component';
+import { SubmitComponent } from './submit/submit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SriLankaMapComponent,
-    CountryComponent
+    EuropeMapComponent,
+    CountryComponent,
+    SubmitComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SriLankaMapComponent } from './europeMap/europeMap.component';
+import { EuropeMapComponent } from './europeMap/europeMap.component';
 import { CountryComponent } from '../app/country/country.component';
+import { SubmitComponent } from './submit/submit.component';
 const routes: Routes = [
-  { path: 'oet/map', component: SriLankaMapComponent },
+  { path: 'oet/map', component: EuropeMapComponent },
+  { path: 'oet/submit', component: SubmitComponent },
   //all european countries get a own url but the component is the same
   { path: 'oet/country/ie', component: CountryComponent },
   { path: 'oet/country/is', component: CountryComponent },

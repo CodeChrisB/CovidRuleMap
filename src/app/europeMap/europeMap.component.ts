@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   templateUrl: './europeMap.component.html',
   styleUrls: ['./europeMap.component.css'],
 })
-export class SriLankaMapComponent implements OnInit, OnDestroy {
+export class EuropeMapComponent implements OnInit, OnDestroy {
   mapTitle = 'Our Europe Timeline';
   mapSubTitle = 'Project Europe';
   seriesName = 'Current Covid Cases';
