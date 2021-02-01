@@ -23,7 +23,6 @@ export class EuropeMapComponent implements OnInit, OnDestroy {
   data = [
     ['ie', 1],
     ['is', 1],
-    ['gb', 1],
     ['pt', 1],
     ['no', 1],
     ['se', 1],
@@ -37,7 +36,6 @@ export class EuropeMapComponent implements OnInit, OnDestroy {
     ['pl', 1],
     ['cz', 1],
     ['at', 1],
-    ['ch', 1],
     ['li', 1],
     ['sk', 1],
     ['hu', 1],
@@ -60,10 +58,11 @@ export class EuropeMapComponent implements OnInit, OnDestroy {
     ['ro', 1],
     ['bg', 1],
     ['gr', 1],
-    ['tr', 1],
     ['cy', 1],
-    ['ru', 1],
   ];
+
+
+  notEu = ['ru',1]
 
   chartOptions: Options = {
     plotOptions: {
@@ -93,9 +92,9 @@ export class EuropeMapComponent implements OnInit, OnDestroy {
     },
     colorAxis: {
       min: 0,
-      max: 1000,
+      max: 0,
       minColor: '#ffffe0',
-      maxColor: '#db4551',
+      maxColor: '#ffffe0',
     },
     series: [
       {
@@ -103,17 +102,17 @@ export class EuropeMapComponent implements OnInit, OnDestroy {
         name: this.seriesName,
         states: {
           hover: {
-            color: '#2c8bff',
+            color:'#dfffe0',
           },
         },
         dataLabels: {
           enabled: true,
           format: '{point.name}',
         },
-        allAreas: true,
         data: this.data as any,
       },
     ],
+
     exporting: {
       enabled: true,
     },
@@ -123,6 +122,16 @@ export class EuropeMapComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.dataService.getChartData().subscribe((data) => {});
+
+    this.chartOptions.series.forEach(x=>{
+      x
+    })
+  }
+
+  ngOnDestroy(): void {
+    if (this.dataService.getChartData() !== undefined) {
+      this.dataService.unsubscribeChartDataEventSubscription();
+    }
   }
 
   countryClick(event) {
@@ -135,12 +144,16 @@ export class EuropeMapComponent implements OnInit, OnDestroy {
     for (var key in $event.point.options) {
       if (country == null) country = $event.point.options[key];
     }
-    this.route.navigate(['/oet/country/'+country], { state: {countryKey:country } });
+    this.notEu.forEach(banned=>{
+      var routing = true;
+      if(banned==country)
+        routing = false;
+
+      if(routing)
+      this.route.navigate(['/oet/country/'+country], { state: {countryKey:country } });
+    })
+
+
   }
 
-  ngOnDestroy(): void {
-    if (this.dataService.getChartData() !== undefined) {
-      this.dataService.unsubscribeChartDataEventSubscription();
-    }
-  }
 }

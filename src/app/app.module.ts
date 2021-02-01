@@ -18,7 +18,8 @@ import { SubmitComponent } from './submit/submit.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
