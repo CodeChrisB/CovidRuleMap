@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import * as Highcharts from 'highcharts/highmaps';
 import { Options } from 'highcharts';
 import { DataService } from '../services/data.service';
@@ -9,14 +9,16 @@ import { Router } from '@angular/router';
 // import sriLanka from '../../assets/lk-all.geo.json';
 
 @Component({
-  selector: 'app-sri-lanka-map',
+  selector: 'EuropeMap',
   templateUrl: './europeMap.component.html',
   styleUrls: ['./europeMap.component.css'],
 })
-export class EuropeMapComponent implements OnInit, OnDestroy {
+export class EuropeMapComponent implements OnInit {
   mapTitle = 'Our Europe Timeline';
   mapSubTitle = 'Project Europe';
   seriesName = 'Current Covid Cases';
+  @Output() eventClicked = new EventEmitter<Event>();
+
 
   Highcharts: typeof Highcharts = Highcharts;
   updateFlag = true;
@@ -62,7 +64,7 @@ export class EuropeMapComponent implements OnInit, OnDestroy {
   ];
 
 
-  notEu = ['ru',1]
+  notEu = ['ru']
 
   chartOptions: Options = {
     plotOptions: {
@@ -121,17 +123,9 @@ export class EuropeMapComponent implements OnInit, OnDestroy {
   constructor(private dataService: DataService, public route: Router) {}
 
   ngOnInit(): void {
-    this.dataService.getChartData().subscribe((data) => {});
-
-    this.chartOptions.series.forEach(x=>{
+      this.chartOptions.series.forEach(x=>{
       x
     })
-  }
-
-  ngOnDestroy(): void {
-    if (this.dataService.getChartData() !== undefined) {
-      this.dataService.unsubscribeChartDataEventSubscription();
-    }
   }
 
   countryClick(event) {
@@ -140,20 +134,15 @@ export class EuropeMapComponent implements OnInit, OnDestroy {
   }
 
   onPointSelect($event) {
+    if($event.point ==undefined)
+    return;
+
     var country = null;
     for (var key in $event.point.options) {
       if (country == null) country = $event.point.options[key];
     }
-    this.notEu.forEach(banned=>{
-      var routing = true;
-      if(banned==country)
-        routing = false;
 
-      if(routing)
-      this.route.navigate(['/oet/country/'+country], { state: {countryKey:country } });
-    })
-
-
+    //alert the other component about the country
+    this.eventClicked.emit($event);
   }
-
 }

@@ -1,7 +1,6 @@
 export interface IContent{
-  name:string
-  age:number
-  link:string
-  creationDate:Date
-  country:string
+  "link":string
+  "date":string
+  "country":string
 }
+

@@ -1,2 +1,9 @@
-<p>You clicked on {{title}}</p>
-<button (click)="main()">Back to Main</button>
+<div *ngIf="event" id="innerContainer">
+  <p>You clicked on {{title}}</p>
+  <button (click)="main()">Back to Main</button>
+</div>
+
+<div *ngIf="!event" id="innerContainer">
+
+  CLick on a country to see our timeline
+</div>
