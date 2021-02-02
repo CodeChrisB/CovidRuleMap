@@ -18,8 +18,8 @@ export class DataService {
   }
 
     // GET-Request: Liefert Response als Observable
-    getGermany(): Observable<IContent[]> {
-      return this.http.get<IContent[]>(this.url + '/germany.json').pipe(map(data=>data));
+    getCountry(countryCode:string): Observable<IContent[]> {
+      return this.http.get<IContent[]>(this.url + '/'+countryCode +'.json').pipe(map(data=>data));
     }
 
 }

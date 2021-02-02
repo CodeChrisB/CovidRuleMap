@@ -1,9 +1,12 @@
-<div *ngIf="event" id="innerContainer">
-  <p>You clicked on {{title}}</p>
-  <button (click)="main()">Back to Main</button>
+<div *ngIf="event" id="container">
+  <h1>{{countryString(title)}}</h1>
+  <div *ngFor="let content of content">
+    <h3>{{content.date}}</h3><br>
+    <iframe [src]="trustUrl(content.link)"></iframe>
+  </div>
 </div>
 
-<div *ngIf="!event" id="innerContainer">
+<div *ngIf="!event" id="container">
 
   CLick on a country to see our timeline
 </div>
