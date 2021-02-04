@@ -16,9 +16,18 @@ export class CountryComponent implements OnInit {
   title:string="No Country Found";
   service:DataService;
   content:IContent[];
+  show:boolean =false;
   ngOnInit(): void {
     this.service = new DataService(this.http);
     console.dir(this.service)
+
+    let url = window.location.href;
+    url = url.substring(url.length-2,url.length);
+    console.dir(url)
+    this.showCountryData(url)
+
+    if(this.isCountryKey(url))
+      this.show=true;
   }
 
   main(){
@@ -27,18 +36,23 @@ export class CountryComponent implements OnInit {
 
   @Input() event: Event;
   onCountryChange($event){
+    console
     var country = null;
     for (var key in $event.point.options) {
       if (country == null) country = $event.point.options[key];
     }
     this.title = country
+    this.show=true;
+    this.showCountryData(country)
+  }
 
+  showCountryData(country:string){
+    this.title = country
     this.service.getCountry(country).subscribe(x=>{
-      this.content = [] //clear old coontent
+      this.content = null //clear old coontent
       this.content = x; //set new content
     })
   }
-
   trustUrl(url:string):SafeUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
@@ -53,5 +67,14 @@ export class CountryComponent implements OnInit {
      break;
    }
    return string;
+  }
+
+
+  isCountryKey(key:string){
+    return [
+      'ie','is','pt','no','se','dk','de','nl','be','lu','es','fr','pl','cz','at','li','sk',
+      'hu','si','it','sm','hr','ba','yf','me','al','mk','fi','ee','lv','lt','by','ua','md',
+      'ro','bg','gr','cy'
+    ].filter(x=>x==key).length>0
   }
 }

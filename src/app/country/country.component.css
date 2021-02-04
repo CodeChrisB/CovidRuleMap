@@ -5,3 +5,37 @@ h1{
 h3{
   background-color: grey;
 }
+
+#center{
+  display: inline-block;
+  margin: 30% auto;
+  padding: 3px;
+}
+
+#container{
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  background-color: #0666a3
+  /*color of map background --> 4b96af*/
+}
+h4#globe{
+  font-size: 150px;
+  margin-bottom: 75px;
+}
+h4#text{
+  color: white;
+  font-size: 40px;
+  margin-top: 80px;
+
+}
+
+/*
+Maybe we have to change the globe size on
+small devices havent testet it yet
+*/
+@media (max-device-width: 1000px) {
+
+
+}

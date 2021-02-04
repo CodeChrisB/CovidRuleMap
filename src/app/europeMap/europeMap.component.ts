@@ -76,6 +76,7 @@ export class EuropeMapComponent implements OnInit {
     },
     chart: {
       map: sriLanka as any,
+      backgroundColor: '#4b96af'
     },
     title: {
       text: this.mapTitle,
@@ -123,9 +124,7 @@ export class EuropeMapComponent implements OnInit {
   constructor(private dataService: DataService, public route: Router) {}
 
   ngOnInit(): void {
-      this.chartOptions.series.forEach(x=>{
-      x
-    })
+
   }
 
   countryClick(event) {
@@ -142,6 +141,8 @@ export class EuropeMapComponent implements OnInit {
       if (country == null) country = $event.point.options[key];
     }
 
+    if(country!='de')
+    alert('please click on germany since its the only mocked one so far')
     //alert the other component about the country
     this.eventClicked.emit($event);
   }

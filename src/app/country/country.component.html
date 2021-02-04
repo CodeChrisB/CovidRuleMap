@@ -1,12 +1,17 @@
-<div *ngIf="event" id="container">
+<div *ngIf="show" id="container">
   <h1>{{countryString(title)}}</h1>
   <div *ngFor="let content of content">
     <h3>{{content.date}}</h3><br>
-    <iframe [src]="trustUrl(content.link)"></iframe>
+    <iframe
+    [src]="trustUrl(content.link)"
+    loading="lazy"
+    ></iframe>
   </div>
 </div>
 
-<div *ngIf="!event" id="container">
-
-  CLick on a country to see our timeline
+<div *ngIf="!show" id="container">
+  <div id="center">
+      <h4 id="globe">🌍</h4>
+      <h4 id="text">Click on a country to see our timeline!</h4>
+    </div>
 </div>

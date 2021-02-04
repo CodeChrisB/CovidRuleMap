@@ -1,17 +1,12 @@
-EuropeMap{
-  max-height: 30vh;
-}
 .container {
   display: grid;
   grid-template-columns: repeat(
     auto-fit, minmax(300px, 50%)
     );
-
-    margin: 1vw;
   }
 
 
-@media (max-device-width: 800px) {
+@media (max-device-width: 1000px) {
   .container {
     display: grid;
     grid-template-columns: repeat(
