@@ -26,8 +26,8 @@ export class CountryComponent implements OnInit {
     console.dir(url)
 
     // changed only this to make writing css easier.
-    this.showCountryData("de")
-    this.show=true;
+    //this.showCountryData("de")
+    //this.show=true;
   }
 
   main(){
@@ -36,7 +36,6 @@ export class CountryComponent implements OnInit {
 
   @Input() event: Event;
   onCountryChange($event){
-    console
     var country = null;
     for (var key in $event.point.options) {
       if (country == null) country = $event.point.options[key];

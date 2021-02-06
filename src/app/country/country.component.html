@@ -1,35 +1,46 @@
+<link rel="preload" href="sintel-short.mp4" as="video" type="video/mp4">
+<link rel="preload" href="sintel-short.webm" as="video" type="video/webm">
+
+
 <div *ngIf="show" id="container">
   <h1>{{countryString(title)}}</h1>
-  <h4>There 453 videos/images of this Country</h4>
+  <h4>There 453 videos/images for this Country</h4>
   <hr>
   <div class="contend" *ngFor="let content of content">
     <div class="timeline">
         <p class="timeline-date">{{content.date}}</p>
     </div>
+
+    <!---https://stackoverflow.com/questions/36723933/how-to-detect-if-the-iframe-is-fully-loaded-in-angular-->
     <div class="videos">
       <div class="item">
         <iframe
+        onload="this.style.visibility = 'visible';"
+        rel="preload"
         [src]="trustUrl(content.link)"
-        loading="lazy"></iframe>
+        ></iframe>
       </div>
       <div class="item">
         <iframe
+        onload="this.style.visibility = 'visible';"
         [src]="trustUrl(content.link)"
-        loading="lazy"></iframe>
+       ></iframe>
       </div>
       <div class="item">
-        <div class="image-container">
+        <div onload="this.style.visibility = 'visible';" class="image-container">
         </div>
       </div>
       <div class="item">
         <iframe
+        onload="this.style.visibility = 'visible';"
         [src]="trustUrl(content.link)"
-        loading="lazy"></iframe>
+        ></iframe>
       </div>
       <div class="item">
         <iframe
+        onload="this.style.visibility = 'visible';"
         [src]="trustUrl(content.link)"
-        loading="lazy"></iframe>
+        ></iframe>
       </div>
     </div>
 
