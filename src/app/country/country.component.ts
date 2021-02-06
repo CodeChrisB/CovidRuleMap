@@ -24,10 +24,10 @@ export class CountryComponent implements OnInit {
     let url = window.location.href;
     url = url.substring(url.length-2,url.length);
     console.dir(url)
-    this.showCountryData(url)
 
-    if(this.isCountryKey(url))
-      this.show=true;
+    // changed only this to make writing css easier.
+    this.showCountryData("de")
+    this.show=true;
   }
 
   main(){

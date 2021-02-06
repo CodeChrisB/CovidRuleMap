@@ -1,30 +1,111 @@
-h1{
-  background-color: aquamarine;
+h1 {}
+
+hr {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
-h3{
+h3 {
   background-color: grey;
 }
 
-#center{
+#center {
   display: inline-block;
   margin: 30% auto;
   padding: 3px;
 }
 
-#container{
+div.timeline {
+  float: left;
+
+
+}
+
+div.videos {
+  border-left: 1px solid black;
+  background-color: #00446e;
+  margin-left: 110px;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+
+  -webkit-box-shadow: 2px 21px 29px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 21px 29px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 21px 29px 0px rgba(0, 0, 0, 0.75);
+
+}
+
+div.item {
+
+  flex-grow: 1;
+  min-width: 250px;
+  min-height: 150px;
+
+  transition: 0.2s;
+}
+
+div.item:hover {
+  transform: scale(1.2);
+  -webkit-box-shadow: 2px 21px 29px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 21px 29px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 21px 29px 0px rgba(0, 0, 0, 0.75);
+}
+
+iframe {
+  width: 100%;
+
+}
+
+
+p.timeline-date {
+  z-index: 2;
+  width: 100px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding-top: 8px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.397);
+}
+
+div.image-container {
+  width: 100%;
   height: 100%;
+  background-image: url("https://dietagespresse.com/wp-content/uploads/2020/11/20201031_PD5611.HR_-768x432.jpg");
+  /* The image used */
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  ;
+}
+
+
+
+#container {
+  height: 950px;
   width: 100%;
   align-items: center;
   text-align: center;
-  background-color: #0666a3
-  /*color of map background --> 4b96af*/
+  background-color: #0666a3;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-h4#globe{
+
+h4#globe {
   font-size: 150px;
   margin-bottom: 75px;
 }
-h4#text{
+
+h4#text {
   color: white;
   font-size: 40px;
   margin-top: 80px;
@@ -35,7 +116,4 @@ h4#text{
 Maybe we have to change the globe size on
 small devices havent testet it yet
 */
-@media (max-device-width: 1000px) {
-
-
-}
+@media (max-device-width: 1000px) {}

@@ -1,13 +1,76 @@
 <div *ngIf="show" id="container">
   <h1>{{countryString(title)}}</h1>
+  <h4>There 453 videos/images of this Country</h4>
+  <hr>
   <div *ngFor="let content of content">
-    <h3>{{content.date}}</h3><br>
-    <iframe
-    [src]="trustUrl(content.link)"
-    loading="lazy"
-    ></iframe>
+    <div class="timeline">
+        <p class="timeline-date">{{content.date}}</p>
+    </div>
+    <div class="videos">
+      <div class="item">
+        <iframe
+        [src]="trustUrl(content.link)"
+        loading="lazy"></iframe>
+      </div>
+      <div class="item">
+        <iframe
+        [src]="trustUrl(content.link)"
+        loading="lazy"></iframe>
+      </div>
+      <div class="item">
+        <div class="image-container">
+        </div>
+      </div>
+      <div class="item">
+        <iframe
+        [src]="trustUrl(content.link)"
+        loading="lazy"></iframe>
+      </div>
+      <div class="item">
+        <iframe
+        [src]="trustUrl(content.link)"
+        loading="lazy"></iframe>
+      </div>
+    </div>
+
+
+
+<!--
+
+-->
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div *ngIf="!show" id="container">
   <div id="center">
