@@ -26,8 +26,8 @@ export class CountryComponent implements OnInit {
     console.dir(url)
 
     // changed only this to make writing css easier.
-    //this.showCountryData("de")
-    //this.show=true;
+    this.showCountryData("de")
+    this.show=true;
   }
 
   main(){

@@ -28,12 +28,12 @@ div.timeline {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #6e6e6e;
+  background: #0054fd;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(41, 41, 41);
+  background: #003399;
 }
 
 /* Handle on hover */
@@ -81,7 +81,8 @@ iframe {
   width: 100%;
 
 }
-div.contend{
+
+div.contend {
   padding-right: 10px;
 }
 
@@ -89,11 +90,11 @@ p.timeline-date {
   z-index: 2;
   width: 100px;
   height: 30px;
-  border: 2px solid white;
+  border: 2px solid #BC986A;
   border-radius: 30px;
   padding-top: 8px;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.397);
+  background-color: #fbeec186;
 }
 
 div.image-container {
@@ -119,9 +120,12 @@ div.image-container {
   width: 100%;
   align-items: center;
   text-align: center;
-  background-color: #0666a3;
+  background-color: #EDF5E1;
   overflow-x: hidden;
   overflow-y: auto;
+
+
+
 }
 
 h4#globe {
@@ -137,9 +141,10 @@ h4#text {
 }
 
 
-iframe{
+iframe {
   visibility: hidden;
 }
+
 /*
 Maybe we have to change the globe size on
 small devices havent testet it yet
