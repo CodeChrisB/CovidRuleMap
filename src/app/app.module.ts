@@ -40,6 +40,9 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+import { TopbarComponent } from './topbar/topbar.component';
+import { MainComponent } from './main/main.component';
+import { GdprComponent } from './gdpr/gdpr.component';
 
 
 
@@ -49,6 +52,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     EuropeMapComponent,
     CountryComponent,
     SubmitComponent,
+    TopbarComponent,
+    MainComponent,
+    GdprComponent,
   ],
   imports: [
     FormsModule,

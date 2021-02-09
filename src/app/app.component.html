@@ -1,15 +1,3 @@
+<topbar></topbar>
 
-<mat-toolbar color="primary">
-  <p>
-    Bookless
-  </p>
- </mat-toolbar>
-<!--https://material.angular.io/components/toolbar/overview--->
-
-
-
-<div class="container">
-    <EuropeMap (eventClicked)="childEventClicked($event)"></EuropeMap>
-    <app-country [event]="clickedEvent"></app-country>
-</div>
-
+<router-outlet></router-outlet>

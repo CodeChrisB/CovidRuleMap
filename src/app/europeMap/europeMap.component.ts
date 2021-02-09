@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class EuropeMapComponent implements OnInit {
   mapTitle = 'Our Europe Timeline';
   mapSubTitle = 'Project Europe';
-  seriesName = 'Current Covid Cases';
+  seriesName = 'Content';
   @Output() eventClicked = new EventEmitter<Event>();
 
 
@@ -64,7 +64,7 @@ export class EuropeMapComponent implements OnInit {
   ];
 
 
-  notEu = ['ru']
+
 
   chartOptions: Options = {
     plotOptions: {
@@ -76,7 +76,8 @@ export class EuropeMapComponent implements OnInit {
     },
     chart: {
       map: sriLanka as any,
-      backgroundColor: '#4b96af'
+      backgroundColor: '#0078d7',
+      borderColor:"#335cad"
     },
     title: {
       text: this.mapTitle,
@@ -96,13 +97,15 @@ export class EuropeMapComponent implements OnInit {
     colorAxis: {
       min: 0,
       max: 0,
-      minColor: '#ffffe0',
-      maxColor: '#ffffe0',
+      minColor: '#16c60c',
+      maxColor: '#16c60c',
     },
     series: [
       {
         type: 'map',
         name: this.seriesName,
+        borderColor:'black',
+        borderWidth:2,
         states: {
           hover: {
             color:'#dfffe0',
