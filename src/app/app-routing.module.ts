@@ -11,6 +11,7 @@ const routes: Routes = [
   //all european countries get a own url but the component is the same
 
   { path: '', pathMatch: 'full', redirectTo: 'oet/map' }, //standard path
+  { path: 'oet', pathMatch: 'full', redirectTo: 'oet/map' }, //standard path
   { path: "*", redirectTo:"oet/map"}, //redirect wrong urls to the dashboard
 ];
 

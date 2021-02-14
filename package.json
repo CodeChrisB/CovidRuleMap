@@ -1,5 +1,5 @@
 {
-  "name": "highcharts-map",
+  "name": "live",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pages":"ng build --prod --base-href 'highcharts-map\\oet\\map' && angular-cli-ghpages"
+    "pages":"ng build --prod --base-href oet/map && angular-cli-ghpages",
+    "git": "git add . && git commit -am '--' && git push"
   },
   "private": true,
   "dependencies": {

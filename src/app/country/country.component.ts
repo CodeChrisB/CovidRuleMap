@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Data, Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { HttpClient } from '@angular/common/http';
-import { IContent } from 'src/assets/Content';
+import { IContent, ISafeContent } from 'src/assets/Content';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-country',
@@ -15,19 +15,17 @@ export class CountryComponent implements OnInit {
 
   title:string="No Country Found";
   service:DataService;
-  content:IContent[];
+  content:ISafeContent[];
   show:boolean =false;
   ngOnInit(): void {
-    this.service = new DataService(this.http);
+    this.service = new DataService(this.http,this.sanitizer);
     console.dir(this.service)
 
     let url = window.location.href;
     url = url.substring(url.length-2,url.length);
     console.dir(url)
 
-    // changed only this to make writing css easier.
-    //this.showCountryData("de")
-    //this.show=true;
+
   }
 
   main(){

@@ -11,20 +11,19 @@
         <p class="timeline-date">{{content.date}}</p>
     </div>
 
-    <!---https://stackoverflow.com/questions/36723933/how-to-detect-if-the-iframe-is-fully-loaded-in-angular-->
     <div class="videos">
       <div class="item">
         <iframe
         onload="this.style.visibility = 'visible';"
         rel="preload"
         loading="lazy"
-        [src]="trustUrl(content.link)"
+        [src]="content.link"
         ></iframe>
       </div>
       <div class="item">
         <iframe
         onload="this.style.visibility = 'visible';"
-        [src]="trustUrl(content.link)"
+        [src]="content.link"
        ></iframe>
       </div>
       <div class="item">
@@ -34,13 +33,13 @@
       <div class="item">
         <iframe
         onload="this.style.visibility = 'visible';"
-        [src]="trustUrl(content.link)"
+        [src]="content.link"
         ></iframe>
       </div>
       <div class="item">
         <iframe
         onload="this.style.visibility = 'visible';"
-        [src]="trustUrl(content.link)"
+        [src]="content.link"
         ></iframe>
       </div>
     </div>
