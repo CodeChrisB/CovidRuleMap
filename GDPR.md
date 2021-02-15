@@ -1,6 +1,6 @@
 # Privacy Policy
 
-## Last updated: February 02, 2021
+## Last updated: February 15, 2021
 
 This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
 
@@ -13,7 +13,6 @@ Definitions
 
 # For the purposes of this Privacy Policy:
 
-- Account means a unique account created for You to access our Service or parts of our Service.
 - Country refers to: Austria
 - Device means any device that can access the Service such as a computer, a cellphone or a digital tablet.
 - Personal Data is any information that relates to an identified or identifiable individual.
