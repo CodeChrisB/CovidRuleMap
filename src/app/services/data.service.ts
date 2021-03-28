@@ -11,7 +11,7 @@ let content:ISafeContent[]=[];
 
 export class DataService {
 
-  url: string = 'https://raw.githubusercontent.com/CodeChrisB/QuickDebugBackend/main';
+  url: string = 'http://localhost:3000/api/';
   http: HttpClient;
 
   constructor(http: HttpClient,private sanitizer:DomSanitizer) {
@@ -20,10 +20,13 @@ export class DataService {
 
     // GET-Request: Liefert Response als Observable
     getCountry(countryCode:string): Observable<ISafeContent[]> {
-      return this.http.get<IContent[]>(this.url + '/'+countryCode +'.json').pipe(map(data=>{
+      // BackendUrl/GetCountry/<CountryId>
+      console.clear()
+      console.log(this.url +countryCode);
+      return this.http.get<IContent[]>(this.url +countryCode).pipe(map(data=>{
 
         data.forEach(c=>{
-          content.push({link:(this.trustUrl(c.link)),date:c.date,country:c.country})
+          content.push({id:c.id,link:(this.trustUrl(c.link)),date:c.date,country:c.country})
         })
 
         return content;
@@ -33,7 +36,5 @@ export class DataService {
     trustUrl(url:string):SafeUrl {
       return this.sanitizer.bypassSecurityTrustResourceUrl(url);
     }
-
-
 }
 

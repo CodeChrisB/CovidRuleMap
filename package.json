@@ -8,8 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pages":"ng build --prod --base-href oet/map && angular-cli-ghpages",
-    "git": "git add . && git commit -am '--' && git push"
+    "pages":"ng build --prod --base-href oet/map && angular-cli-ghpages"
   },
   "private": true,
   "dependencies": {
